@@ -5,12 +5,16 @@
 Generate Voucher code against each user.
 
 POST http://localhost/voucher_code/generate
+
+PARAMS:-
 special_offer - int(ID for special offer)
 expiry_date - date(mm/dd/yyyy)
 
 Usage of voucher code.
 
 POST http://localhost/voucher_code/use
+
+PARAMS:-
 email - email
 voucher_code - 8 digit code generated for each user.
 
