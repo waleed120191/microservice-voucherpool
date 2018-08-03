@@ -1,23 +1,32 @@
-# Lumen PHP Framework
+# Virtual pool microservices
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+## Endpoints
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+Generate Voucher code against each user.
 
-## Official Documentation
+POST http://localhost/voucher_code/generate
+special_offer - int(ID for special offer)
+expiry_date - date(mm/dd/yyyy)
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+Usage of voucher code.
 
-## Security Vulnerabilities
+POST http://localhost/voucher_code/use
+email - email
+voucher_code - 8 digit code generated for each user.
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Get voucher code and discount against it for user.
 
-## License
+GET http://localhost/user/voucherCode?email=schneider.gladyce@nicolas.com
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-# microservice-voucherpool
-# microservice-voucherpool
+## Database
+
+Database/Migration - Database structure.
+
+## Usage
+1) Pull code in folder.
+2) Create databases.
+3) .env - Setup database connections.
+
+4) Artisan command : php artisan migrate:refresh --seed
+This command can be used on command prompt at root folder for creation of database tables and data initial data in it.
+
